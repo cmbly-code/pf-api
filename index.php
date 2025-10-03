@@ -44,6 +44,8 @@ $request_string = '{"searchType":"SMR","searchTypePrioritized":"SSA","origin":"'
 
 echo $token;
 echo '/n/r <br>';
+echo '/n/r <br>';
+echo '/n/r <br>';
 echo $cookie;
 return;
 
