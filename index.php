@@ -86,7 +86,7 @@ exit;
 
 
 function get_calendar($token, $cookie, $request_string){
-
+try {
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
@@ -126,6 +126,10 @@ function get_calendar($token, $cookie, $request_string){
     return $response;
 
 
+    //code...
+} catch (\Throwable $th) {
+   return json_encode($th);
+}
 
 }
 
