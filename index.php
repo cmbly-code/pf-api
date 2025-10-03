@@ -46,7 +46,7 @@ $request_string = '{"searchType":"SMR","searchTypePrioritized":"SSA","origin":"'
 
 $calendar_raw = get_calendar($token, $cookie, $request_string);
 
-
+echo $calendar_raw;
 
 
 //echo $calendar_raw;
