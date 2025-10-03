@@ -41,13 +41,7 @@ $calendar_to = (new DateTime('last day of next month'))
 
 
 $request_string = '{"searchType":"SMR","searchTypePrioritized":"SSA","origin":"' . strtoupper($origin) . '","destination":"' . strtoupper($destination) . '","cabinCode":"1","departingDate":"2025-09-13","toDepartingDate":"2025-10-31","ftNum":"","internationalization":{"language":"en","country":"wr","currency":"usd"},"idCoti":"900020949019598088","ip":"","isReturning":false,"paxNum":' . $passengers . ',"promotionCodes":["CORE008"],"discounts":[],"sch":{"schHcfltrc":"RTHl16zCyvVmyqmJG1UR079TJlEJzKWXKGhXUFMPYyI=","schLmidLtrc":"8WEgrX46Hx0Z4G6FTiNhcLy8q23JBZIiV4UJ+4QCjX0=","schPIR":"axKDLp+XfxAGufnBGJWFjJ620Zm745u61T5Sl7SuAJk=","schPcFlt":"jyOd0GAZeE/ZAHMxtRQSWf5OqPd2SrvDe61kr44gq3E=","schTr":"hp1D+cLL+mK59uyQlgOY9g=="}}';
-
-echo $token;
-echo '/n/r <br>';
-echo '/n/r <br>';
-echo '/n/r <br>';
-echo $cookie;
-return;
+ 
 
 $calendar_raw = get_calendar($token, $cookie, $request_string);
 
