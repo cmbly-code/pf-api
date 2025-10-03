@@ -41,12 +41,43 @@ $calendar_to = (new DateTime('last day of next month'))
 
 $request_string = '{"searchType":"SMR","searchTypePrioritized":"SSA","origin":"' . strtoupper($origin) . '","destination":"' . strtoupper($destination) . '","cabinCode":"1","departingDate":"2025-09-13","toDepartingDate":"2025-10-31","ftNum":"","internationalization":{"language":"en","country":"wr","currency":"usd"},"idCoti":"900020949019598088","ip":"","isReturning":false,"paxNum":' . $passengers . ',"promotionCodes":["CORE008"],"discounts":[],"sch":{"schHcfltrc":"RTHl16zCyvVmyqmJG1UR079TJlEJzKWXKGhXUFMPYyI=","schLmidLtrc":"8WEgrX46Hx0Z4G6FTiNhcLy8q23JBZIiV4UJ+4QCjX0=","schPIR":"axKDLp+XfxAGufnBGJWFjJ620Zm745u61T5Sl7SuAJk=","schPcFlt":"jyOd0GAZeE/ZAHMxtRQSWf5OqPd2SrvDe61kr44gq3E=","schTr":"hp1D+cLL+mK59uyQlgOY9g=="}}';
 
+echo $request_string;
+
+echo ' ------------------- ';
+echo  array(
+        CURLOPT_URL => 'https://api.lifemiles.com/svc/air-redemption-cal-calendar-private',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS => $request_string,
+        CURLOPT_HTTPHEADER => array(
+            'accept: application/json',
+            'authorization: ' . $token,
+            'cache-control: no-cache',
+            'content-type: application/json',
+            'origin: https://www.lifemiles.com',
+            'pragma: no-cache',
+            'priority: u=1, i',
+            'realm: lifemiles',
+            'referer: https://www.lifemiles.com/',
+            'sec-ch-ua: "Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"',
+            'sec-ch-ua-mobile: ?0',
+            'sec-ch-ua-platform: "Windows"',
+            'sec-fetch-dest: empty',
+            'sec-fetch-mode: cors',
+            'sec-fetch-site: same-site',
+            'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+            'Cookie: ' . $cookie
+        ),
+    );
 
 
-
+return;
 $calendar_raw = get_calendar($token, $cookie, $request_string);
-
-echo $calendar_raw;
 
 
 //echo $calendar_raw;
