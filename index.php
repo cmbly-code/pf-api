@@ -43,8 +43,8 @@ $request_string = '{"searchType":"SMR","searchTypePrioritized":"SSA","origin":"'
 
 echo $request_string;
 
-echo ' ------------------- ';
-echo  array(
+echo ' ------------------- /n';
+echo json_encode(array(
         CURLOPT_URL => 'https://api.lifemiles.com/svc/air-redemption-cal-calendar-private',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
@@ -73,7 +73,7 @@ echo  array(
             'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
             'Cookie: ' . $cookie
         ),
-    );
+    ));
 
 
 return;
